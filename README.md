@@ -1,15 +1,15 @@
-# Architecture
+# Arquitetura
 
-This repository is intended for storing and versioning documents related to projects developed by the cooperative. Here you will find records organized by branch, containing:
+Este repositório destina-se ao armazenamento e versionamento de documentos relacionados aos projetos desenvolvidos pela cooperativa. Aqui você encontrará registros organizados por ramo, contendo:
 
-- Project plans
+- Planos de projeto
 
-- ADRs (Architecture Decision Records)
+- ADRs (Registros de Decisões de Arquitetura)
 
-- DERs (Requirements Specification Documents)
+- DERs (Documentos de Especificação de Requisitos)
 
-- Other technical and operational documents
+- Outros documentos técnicos e operacionais
 
-The structure aims to ensure the traceability of decisions, facilitate collaboration among cooperative members, and maintain a clear history of each project's progress.
+A estrutura visa garantir a rastreabilidade das decisões, facilitar a colaboração entre os cooperados e manter um histórico claro do andamento de cada projeto.
 
-Each branch can represent a specific project or initiative, allowing for the isolation and organization of documents in a contextualized manner.
+Cada ramo pode representar um projeto ou iniciativa específica, permitindo o isolamento e a organização de documentos de forma contextualizada.
