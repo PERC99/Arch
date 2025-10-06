@@ -2,6 +2,7 @@
 
 #### Versão: 1.0.0
 #### Data da Última Atualização: 04/10/2025
+#### Status: Proposto
 
 ## 1. Introdução
 ### 1.1. Resumo do Projeto
