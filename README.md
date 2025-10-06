@@ -69,14 +69,24 @@ O projeto segue uma arquitetura de API RESTful (Backend) e um Single Page Applic
 ## 6. Endpoints da API (Exemplos)
 A documentação completa da API pode ser encontrada em /api/docs (gerada por [Ex: Swagger/OpenAPI]).
 Autenticação
+```
 POST /auth/register - Registra um novo proprietário.
+```
+```
 POST /auth/login - Autentica um proprietário e retorna um token JWT.
+```
 Imóveis (Rotas Protegidas)
+```
 GET /properties - Lista todos os imóveis do proprietário logado.
+```
+```
 POST /properties - Cadastra um novo imóvel.
+```
+```
 GET /properties/{id} - Obtém detalhes de um imóvel específico.
 PUT /properties/{id} - Atualiza um imóvel.
 DELETE /properties/{id} - Remove um imóvel.
+```
 (Continue listando os principais endpoints para Inquilinos, Contratos, Pagamentos, etc.)
 ## 7. Roadmap (Futuras Funcionalidades)
 - [ ] Integração com gateway de pagamento para baixa automática do aluguel.
