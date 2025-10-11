@@ -103,3 +103,5 @@ Enquanto o MySQL é uma opção viável, o PostgreSQL oferece uma vantagem clara
 - **Gerenciamento da Infraestrutura:** Um banco de dados como o PostgreSQL exige administração (backups, atualizações, monitoramento).
 
 - **Mitigação do Risco:** A complexidade de gerenciamento será mitigada através da utilização de um serviço de banco de dados gerenciado (Managed Database), como o AWS RDS, Google Cloud SQL, ou Supabase. Essas plataformas automatizam as tarefas operacionais, permitindo que a equipe de desenvolvimento foque exclusivamente na lógica da aplicação, combinando a potência do PostgreSQL com a simplicidade de uma solução PaaS.
+
+
