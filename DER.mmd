@@ -1,0 +1,61 @@
+```mermaid
+erDiagram
+    OWNER {
+        int id PK "ID do Proprietário"
+        string name
+        string email
+        string password
+    }
+
+    PROPERTY {
+        int id PK "ID do Imóvel"
+        int owner_id FK "ID do Proprietário"
+        string address
+        string type "Casa, Apartamento, etc."
+        string description
+        string status "Vago, Alugado"
+    }
+
+    RENTER {
+        int id PK "ID do Inquilino"
+        int owner_id FK "ID do Proprietário"
+        string name
+        string cpf
+        string email
+        string phone
+    }
+
+    CONTRACT {
+        int id PK "ID do Contrato"
+        int property_id FK "ID do Imóvel"
+        int renter_id FK "ID do Inquilino"
+        date start_date
+        date end_date
+        float price
+        int due_date
+    }
+
+    PAYMENT {
+        int id PK "ID do Pagamento"
+        int contract_id FK "ID do Contrato"
+        date due_date
+        date payment_date "Pode ser nulo"
+        float amount_paid
+        string status "Pendente, Pago, Atrasado"
+    }
+
+    DOCUMENT {
+        int id PK "ID do Documento"
+        int contract_id FK "ID do Contrato"
+        string filename
+        string url
+        string type "PDF, JPG, etc."
+    }
+
+    OWNER ||--|{ PROPERTY : "possui"
+    OWNER ||--|{ RENTER : "cadastra"
+    PROPERTY ||--o{ CONTRACT : "é objeto de"
+    RENTER ||--o{ CONTRACT : "participa de"
+    CONTRACT ||--|{ PAYMENT : "gera"
+    CONTRACT ||--o{ DOCUMENT : "tem"
+```
