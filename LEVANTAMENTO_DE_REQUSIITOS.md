@@ -1,7 +1,7 @@
-[NOME DO PROJETO] - Requisitos do Sistema
+# [NOME DO PROJETO] - Levantamento de Requisitos
 
-### Versão do Documento: 1.0
-### Autor: Gabriel Camelo
+### **Versão do Documento:** 1.0
+### **Autor:** Gabriel Camelo
 
 ### Revisões
 |   Data	        |   Revisor         |
