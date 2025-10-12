@@ -5,7 +5,7 @@
 ### **Autor:** Gabriel Camelo
 
 ## 1. Introdução
-Este documento fornece uma explicação detalhada do Diagrama de Entidade-Relacionamento (DER) para o sistema AlugaFácil. Ele descreve a arquitetura lógica do banco de dados, definindo as entidades principais, seus atributos e os relacionamentos entre elas.
+Este documento fornece uma explicação detalhada do Diagrama de Entidade-Relacionamento (DER) para o sistema [NOME DO PROJETO]. Ele descreve a arquitetura lógica do banco de dados, definindo as entidades principais, seus atributos e os relacionamentos entre elas.
 
 Este modelo serve como um guia fundamental para a equipe de desenvolvimento, garantindo que a estrutura de dados implementada atenda a todos os requisitos funcionais previamente definidos.
 
