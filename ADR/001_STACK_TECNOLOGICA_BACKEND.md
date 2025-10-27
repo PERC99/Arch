@@ -1,6 +1,6 @@
 # ADR-001: Escolha da Stack Tecnológica para o Backend
 
-### Status: Proposto
+### Status: Aprovado
 
 #### Data: 2025-10-04
 

@@ -1,6 +1,6 @@
 # ADR-002: Escolha do Banco de Dados
 
-### Status: Proposto
+### Status: Aprovado
 
 #### Data: 2025-10-10
 
