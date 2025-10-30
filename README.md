@@ -1,76 +1,76 @@
-# Documentação de Projeto: [Nome do Projeto]
+# Repositório Arquitetural - Rental Management (Gerenciamento de Aluguéis)
 
-#### Versão: 1.0.0
-#### Data da Última Atualização: 04/10/2025
+### Versão: 1.0.0
+
+### Data da Última Atualização: 2025-10-26
 
 ## 1. Introdução
-### 1.1. Resumo do Projeto
-O [Nome do Projeto] é um sistema web/mobile projetado para simplificar o gerenciamento de aluguéis de imóveis por proprietários pessoas físicas. A plataforma centraliza todas as informações e processos relacionados a contratos, pagamentos, comunicação com inquilinos e manutenção, eliminando a necessidade de planilhas complexas e controles manuais.
-### 1.2. O Problema
-Proprietários que alugam seus imóveis diretamente, sem o intermédio de imobiliárias, enfrentam desafios como:
-Controle de datas de vencimento e pagamentos de aluguel.
-Cálculo de multas e juros por atraso.
-Geração e armazenamento de recibos.
-Gestão de contratos e reajustes anuais (IGP-M, IPCA, etc.).
-Acompanhamento de solicitações de manutenção feitas pelos inquilinos.
-Centralização de documentos importantes (contrato, vistorias, documentos do inquilino).
-### 1.3. A Solução Proposta
-O sistema oferece um dashboard centralizado onde o proprietário pode:
-Cadastrar seus imóveis e inquilinos.
-Gerenciar contratos de aluguel de forma digital.
-Registrar pagamentos e automatizar o envio de recibos.
-Receber notificações sobre vencimentos e pagamentos em atraso.
-Controlar despesas relacionadas ao imóvel (IPTU, condomínio, reparos).
-Manter um histórico de comunicação e solicitações.
-## 2. Funcionalidades Principais
-- Dashboard Principal: 
-Visão geral com os próximos vencimentos, status dos pagamentos do mês e alertas importantes.
-- Gerenciamento de Imóveis:
-Cadastro de múltiplos imóveis (apartamento, casa, etc.).
-Associação de fotos e documentos por imóvel.
-- Gerenciamento de Inquilinos:
-Cadastro de informações de contato e documentos dos inquilinos.
-- Controle de Contratos:
-Criação de contratos com data de início/fim, valor do aluguel, índice de reajuste e dia de vencimento.
-Upload do contrato assinado.
-Histórico de reajustes.
-- Controle Financeiro:
-Lançamento de pagamentos de aluguel (com baixa manual ou futura integração com gateway).
-Cálculo automático de multas e juros por atraso.
-Geração de recibos em PDF.
-Registro de despesas (ex: IPTU, obras, condomínio).
-Relatórios financeiros simples (receitas vs. despesas por imóvel).
-- Notificações:
-Alertas automáticos por e-mail/push sobre aluguéis a vencer ou em atraso.
-Lembretes sobre o fim do contrato.
-## 3. Arquitetura e Tecnologias
-### 3.1. Visão Geral da Arquitetura
-O projeto segue uma arquitetura de API RESTful (Backend) e um Single Page Application - SPA (Frontend). A comunicação entre o cliente e o servidor é feita através de requisições HTTP, utilizando o formato JSON.
-### 3.2. Stack Tecnológica
-- Frontend: []
-- Backend: [Ex: Node.js com Express/NestJS, Python com Django/Flask, Java com Spring Boot]
-- Banco de Dados: [Ex: PostgreSQL, MySQL, MongoDB]
-- Autenticação: [Ex: JWT (JSON Web Tokens), OAuth2]
-- Infraestrutura/Hospedagem: [Ex: Docker, AWS (EC2, S3), Vercel, Google Cloud Run]
-## 4. Configuração do Ambiente de Desenvolvimento
-### 4.1. Pré-requisitos
-- Node.js (versão [Ex: 18.x ou superior])
-- Gerenciador de pacotes [Ex: npm, yarn]
-- Docker e Docker Compose
-- Git
-## 5. Modelagem do Banco de Dados
-- Principais Entidades:
-- - Users (Proprietários): id, name, email, password_hash, created_at
-- - Properties (Imóveis): id, user_id (FK), address, city, state, zip_code, description, created_at
-- - Tenants (Inquilinos): id, name, email, phone, document_number, created_at
-- - Contracts (Contratos): id, property_id (FK), tenant_id (FK), start_date, end_date, rent_amount, due_day, adjustment_index (ex: 'IPCA'), status (ex: 'active', 'finished', 'cancelled')
-- - Payments (Pagamentos): id, contract_id (FK), due_date, paid_at, amount_paid, late_fee (multa), interest (juros), status (ex: 'pending', 'paid', 'overdue')
-## 6. Roadmap (Futuras Funcionalidades)
-- [ ] Integração com gateway de pagamento para baixa automática do aluguel.
-- [ ] Módulo de comunicação (chat) entre proprietário e inquilino.
-- [ ] Assinatura digital de contratos.
-- [ ] Aplicativo mobile (React Native / Flutter).
-- [ ] Relatórios avançados e exportação para Excel/PDF.
-## 7. Licença
-Este projeto está licenciado sob a licença [Ex: MIT, GPL].
 
+### 1.1. Propósito deste Repositório
+- Este repositório é a fonte única de verdade (SSOT - Single Source of Truth) para todas as decisões de arquitetura de software relacionadas ao desenvolvimento Frontend (Web e PWA) na cooperativa.
+
+- O objetivo é registrar as escolhas tecnológicas significativas, seus fundamentos (porquês) e suas consequências, garantindo que todas as equipes de desenvolvimento e projetos futuros sigam padrões consistentes.
+
+### 1.2. O Problema que Resolvemos
+Sem um registro centralizado de decisões, as equipes podem:
+
+- Utilizar stacks tecnológicas diferentes para problemas semelhantes, criando silos de conhecimento.
+
+- Perder tempo reavaliando decisões que já foram tomadas no passado.
+
+- Ter dificuldade em integrar novos desenvolvedores (onboarding), que não têm acesso ao contexto histórico das escolhas de arquitetura.
+
+- Desenvolver soluções inconsistentes que prejudicam a manutenibilidade e a experiência do usuário (UX) entre os produtos da cooperativa.
+
+### 1.3. A Solução Proposta (O que é um ADR?)
+Um ADR (Architectural Decision Record) é um documento curto que captura uma única decisão arquitetural.
+
+Cada ADR neste repositório descreve:
+
+- Contexto: O problema ou a necessidade que motivou a decisão.
+
+- Opções Consideradas: As alternativas que foram avaliadas.
+
+- Decisão: A opção que foi escolhida.
+
+- Justificativa: O "porquê" da escolha, alinhado aos nossos fatores de decisão.
+
+- Consequências: Os resultados esperados (positivos) e os riscos a mitigar (negativos) dessa escolha.
+
+## 2. Decisões Atuais (ADRs Aprovados)
+Abaixo estão as decisões vigentes que orientam o desenvolvimento de todos os novos projetos de frontend na cooperativa:
+
+ADR-001: Escolha da Stack Tecnológica do projeto
+ADR-002: Escolha do Banco de Dados
+
+(Novos ADRs aprovados serão listados aqui.)
+
+## 3. Como Contribuir (Processo de Decisão)
+Este é um documento vivo. Novas decisões precisam ser tomadas e decisões antigas podem se tornar obsoletas.
+
+### 3.1. Quando Criar um Novo ADR?
+Um novo ADR deve ser proposto quando uma decisão impactar significativamente a arquitetura, a stack tecnológica ou o padrão de desenvolvimento de múltiplos projetos.
+
+#### Exemplos:
+
+- Adotar uma nova biblioteca principal (ex: para roteamento, gerenciamento de estado, chamadas de API).
+
+- Mudar uma ferramenta de build ou linting.
+
+- Definir um novo padrão de arquitetura (ex: estrutura de pastas, atomic design).
+
+### 3.2. O Processo de Proposta
+- Crie uma Cópia: Copie o arquivo adr/template.md para um novo arquivo, seguindo o padrão adr/adr-NNN-titulo-curto.md. (Onde NNN é o próximo número sequencial).
+
+- Escreva a Proposta: Preencha o template com o Status: "Proposto". Detalhe o contexto, as opções e a justificativa.
+
+- Abra um Pull Request (PR): Envie o novo ADR através de um PR para que a equipe de arquitetura e outros desenvolvedores possam revisar e discutir.
+
+- Aprovação: Após o consenso, o PR é aprovado, o merge é feito e o status do ADR é alterado para "Aprovado".
+
+### 3.3. Status de um ADR
+- Proposto: Uma decisão em discussão.
+
+- Aprovado: A decisão oficial e vigente da cooperativa.
+
+- Obsoleto (Deprecated): Uma decisão antiga que foi substituída por um novo ADR.
